@@ -1,5 +1,5 @@
 <?php
-$dsn = "mysql:host=localhost;dbname=ecommmerce";
+$dsn = "mysql:host=localhost;dbname=transactions_app_auth";
 $user = "root";
 $pass = "";
 $option = array(
