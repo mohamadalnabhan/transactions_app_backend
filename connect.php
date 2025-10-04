@@ -1,7 +1,7 @@
 <?php
-$dsn = "mysql:host=localhost;dbname=transactions_app_auth";
-$user = "root";
-$pass = "";
+$dsn = "mysql:host=bcpkqjx4nld9fvovi79g-mysql.services.clever-cloud.com;dbname=bcpkqjx4nld9fvovi79g";
+$user = "ugrye1gyfnwrfeaq";
+$pass = "EmwQSWPfRDZCoI4yGSVT";
 $option = array(
    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"
 );
@@ -12,7 +12,7 @@ try {
    header("Access-Control-Allow-Origin: *");
    header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, Access-Control-Allow-Origin");
    header("Access-Control-Allow-Methods: POST, OPTIONS , GET");
-   include "./functions.php";
+   include __DIR__ . "/functions.php";
    if (!isset($notAuth)) {
       // checkAuthenticate();
    }

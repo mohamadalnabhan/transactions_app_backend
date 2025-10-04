@@ -2,13 +2,15 @@
 
 include "../connect.php" ; 
 
+include __DIR__ . "/../mail/mailer.php";
+$verifyCode = rand(10000, 99999); // 5-digit random code
 
 //Get user input (signup data)
 $username = filterRequest("username") ;
 $usersemail = filterRequest("email") ; 
 $usersphone = filterRequest("phone") ; 
 
-$verifyCode =  filterRequest("verifycode") ;  
+// $verifyCode =  filterRequest("verifycode") ;  
 $userspassword  = sha1($_POST['password'])  ; 
 
 //checking if email exist 
@@ -33,7 +35,7 @@ if($count > 0 ) {
 
 
     if (!$sent) {
-    error_log("❌ sendEmail failed for $email");
+    error_log("❌ sendEmail failed for $usersemail");
 }
     insertData("users" , $data);
 }
