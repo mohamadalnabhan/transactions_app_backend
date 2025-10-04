@@ -30,6 +30,7 @@ if($count > 0 ) {
         "users_password" =>$userspassword  ,
         "users_phone" => $usersphone , 
         "users_verificationcode" =>$verifyCode , 
+        "users_approved" => 0   // 👈 add this
     ) ; 
  $sent = sendEmail($usersemail, "Verification code Test", "Verification code $verifyCode");
 
