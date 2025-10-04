@@ -1,5 +1,5 @@
 <?php
-$dsn = "mysql:host=bcpkqjx4nld9fvovi79g-mysql.services.clever-cloud.com;dbname=bcpkqjx4nld9fvovi79g";
+$dsn = "mysql:host=bcpkqjx4nld9fvovi79g-mysql.services.clever-cloud.com;port=3306 ;dbname=bcpkqjx4nld9fvovi79g";
 $user = "ugrye1gyfnwrfeaq";
 $pass = "EmwQSWPfRDZCoI4yGSVT";
 $option = array(
