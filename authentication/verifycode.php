@@ -1,11 +1,11 @@
 <?php
 include "../connect.php"; 
 
-$email = $_POST['email'];
-$code = $_POST['users_verificationcode'];
+$email = trim($_POST['email']);
+$code  = trim($_POST['users_verificationcode']);
 
-$stmt = $con->prepare("SELECT * FROM users WHERE users_email = ? AND users_verificationcode = ?");
-$stmt->execute(array($email, $code));
+$stmt = $con->prepare("SELECT * FROM users WHERE TRIM(users_email) = ? AND TRIM(users_verificationcode) = ?");
+$stmt->execute([$email, $code]);
 $count = $stmt->rowCount();
 
 if ($count > 0) {
@@ -15,5 +15,4 @@ if ($count > 0) {
 } else {
     echo json_encode(["status" => "failure", "message" => "Invalid verification code or email"]);
 }
-
 ?>
