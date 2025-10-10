@@ -5,7 +5,7 @@ include "../connect.php" ;
 
  //Get user input (signup data)
 $usersemail = filterRequest("email") ; 
-$usersphone = filterRequest("phone") ; 
+// $usersphone = filterRequest("phone") ; 
 $userspassword  = sha1($_POST['password'])  ;
 
 
