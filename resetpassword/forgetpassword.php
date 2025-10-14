@@ -1,6 +1,6 @@
 <?php
 include "../connect.php";
-
+include "../mail/mailer.php" ;
 $usersemail = filterRequest("email");
 $verifyCode = rand(10000, 99999);
 
