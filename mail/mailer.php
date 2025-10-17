@@ -30,8 +30,14 @@ function sendEmail($to, $subject, $body, $altBody = '') {
         $mail->Subject = $subject;
         $mail->Body    = $body;
         $mail->AltBody = $altBody ?: strip_tags($body);
+        error_log("MAIL_HOST=" . getenv("MAIL_HOST"));
+error_log("MAIL_USERNAME=" . getenv("MAIL_USERNAME"));
+error_log("MAIL_FROM_EMAIL=" . getenv("MAIL_FROM_EMAIL"));
 
-        $mail->send();
+       error_log("📤 Trying to send to: $to | Subject: $subject | Code: $body");
+       $mail->send();
+       error_log("✅ Mail sent successfully!");
+
         return true;
     } catch (Exception $e) {
         error_log("❌ Email failed: " . $mail->ErrorInfo);
